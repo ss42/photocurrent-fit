@@ -15,4 +15,18 @@ def compile_data(stopping_voltages, photocurrents):
     # NOT YET IMPLEMENTED.
     # Follow the above comments to turn the two arrays above into a single dictionary. with the keys and values
     # as described.
-    return "Not implemented"
+    combined_data = {}
+    count = 1
+    for x in range(len(stopping_voltages)):
+        try:
+            key_check = combined_data.get(stopping_voltages[x])
+            if key_check == None:
+
+                 combined_data[stopping_voltages[x]] = photocurrents[x], photocurrents[x] * photocurrents[x], count
+                 count += 1
+
+        except KeyError:
+            print("Error")
+
+
+    return combined_data

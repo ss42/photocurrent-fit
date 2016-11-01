@@ -8,8 +8,10 @@
 
 def invert_2x2(a, b, c, d):
     # DUMMY IMPLEMENTATION
-    e = a
-    f = b
-    g = c
-    h = d
-    return e, f, g, h
+    ax = d
+    bx = -b
+    cx = -c
+    dx = a
+    divide = 1/(a*d - b*c)
+
+    return divide * d, divide * (-b), divide * (-c), divide * a
